@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Minus, Plus } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -25,7 +24,7 @@ export function CustomDrawer({focusTime, setFocusTime, restTime, setRestTime}: I
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="w-full mt-2">Configuração</Button>
+        <Button className="w-full mt-2 font-bold">Configurações</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">

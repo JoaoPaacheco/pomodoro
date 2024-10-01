@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { CustomDrawer } from './components/customDrawer'
+import { CustomDrawer } from './components/CustomDrawer'
 import { Button } from './components/ui/button'
-import { Input } from './components/ui/input'
-import { Label } from './components/ui/label'
 import './index.css'
 
 export function App() {
@@ -20,10 +18,14 @@ export function App() {
   return (
     <div className="flex h-screen items-center justify-center bg-[url('src/assets/forest-starry-sky-night.jpg')] bg-cover p-8">
     {/* <div className="flex h-screen items-center justify-center bg-cover p-8 bg-gray-800 dark"> */}
-      <main className='p-4 bg-white/10 backdrop-blur rounded-lg w-full'>
-        <h1 className='text-center text-3xl font-bold'>Título</h1>
-        <Button className='w-full font-bold' onClick={beginPomodoro}>Começar</Button>
-        <CustomDrawer focusTime={focusTime} restTime={restTime} setFocusTime={setFocusTime} setRestTime={setRestTime}/>
+      <main className='p-4 bg-white/10 backdrop-blur rounded-lg w-full flex flex-col items-center justify-center gap-2'>
+        <h1 className='text-3xl font-bold' hidden={isActive}>Tudo pronto?</h1>
+        <p>Círculo</p>
+        <p>1º pomodoro</p>
+        <div className='w-full'>
+          <Button className='w-full font-bold' onClick={beginPomodoro} hidden={isActive}>Começar</Button>
+          <CustomDrawer focusTime={focusTime} restTime={restTime} setFocusTime={setFocusTime} setRestTime={setRestTime}/>
+        </div>
       </main>
     </div>
   )
